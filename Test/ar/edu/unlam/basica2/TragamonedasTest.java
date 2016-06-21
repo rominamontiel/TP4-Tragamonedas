@@ -47,14 +47,34 @@ public class TragamonedasTest {
 	@Test
 	public void TestJugarAlTragamonedas(){
 		
+		System.out.printf("\n \n--------- Funcionamiento normal de la máquina: ---------\n");
+		
 		Tragamonedas tragamoneda = new Tragamonedas();
 		
 		tragamoneda.activar();
 		
 		if(tragamoneda.entregarPremio()==true)
-			System.out.printf("\n %d | %d | %d \n $$$$ GANASTE!! $$$$$ \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
+			System.out.printf("\n %d | %d | %d  $$$$ GANASTE!! $$$$ \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
 		else
-			System.out.printf("\n %d | %d | %d  PERDISTE! :( Sigue participando!! \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
+			System.out.printf("\n %d | %d | %d - PERDISTE! :( Sigue participando!! \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
+		
+		
+	}
+	
+	
+	
+	@Test
+	public void TestQueDanTodosIguales(){
+		
+		System.out.printf(" \n \n --------- Test en caso de GANADOR: --------- \n");
+		
+		Tragamonedas tragamoneda = new Tragamonedas();
+		
+				
+		if(tragamoneda.entregarPremio()==true)
+			System.out.printf("\n %d | %d | %d  $$$$ GANASTE!! $$$$$ \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
+		else
+			System.out.printf("\n %d | %d | %d - PERDISTE! :( Sigue participando!! \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
 		
 		
 	}
