@@ -1,6 +1,6 @@
 package ar.edu.unlam.basica2;
 
-public class FixNumberGenerator {
+public class FixNumberGenerator implements NumberGenerator{
 	
 	private Integer numero;	
 	
@@ -11,11 +11,9 @@ public class FixNumberGenerator {
 		}
 	
 	
-	//@Override
+	@Override
 	public Integer generate(){
-		
 		return numero;
-		
 	}
 	
 	

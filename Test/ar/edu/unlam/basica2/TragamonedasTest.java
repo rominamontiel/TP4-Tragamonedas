@@ -1,6 +1,6 @@
 package ar.edu.unlam.basica2;
 
-//import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -19,15 +19,38 @@ public class TragamonedasTest {
 		if(t1==t2 && t2==t3)
 			{System.out.printf(" \n   $$$$ PREMIO $$$$");}
 		else
-			{System.out.printf(" \n Sigue participando! :) ");}
+			{System.out.printf(" \n Sigue participando! :) \n ---------------------------------------- ");}
 		
 		
 	}
 
 	
+	@Test
+	public void TestearValorInicial(){
+		
+		Tragamonedas tragamoneda = new Tragamonedas();
+		
+		Integer esperado = 1;
+		
+		Integer t1 = tragamoneda.tambor1.getPosicion();
+		Integer t2 = tragamoneda.tambor2.getPosicion();
+		Integer t3 = tragamoneda.tambor3.getPosicion();
+
+		assertEquals(esperado,t1);
+		assertEquals(esperado,t2);
+		assertEquals(esperado,t3);
+		
+		
+	}
 	
 	
-	
+	@Test
+	public void TestJugarAlTragamonedas(){
+		
+		
+		
+		
+	}
 	
 	
 }
