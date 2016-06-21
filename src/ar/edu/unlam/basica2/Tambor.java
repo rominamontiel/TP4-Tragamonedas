@@ -2,15 +2,20 @@ package ar.edu.unlam.basica2;
 
 public class Tambor {
 	
-	public Tambor(NumberGenerator generator){
-		
+	private int posicion;
+	
+	public Tambor(NumberGenerator generator){  // CONSTRUCTOR 
+		this.posicion=generator.generate();
 	}
 	
 	public Integer getPosicion(){
-		/*    Tiene que devolver un Integer      */
+		  return posicion;    
 	}
 	
 	public void girar(){
+		
+		RandomNumberGenerator resultado = new RandomNumberGenerator();
+		this.posicion=resultado.generate();
 		
 	}
 	
