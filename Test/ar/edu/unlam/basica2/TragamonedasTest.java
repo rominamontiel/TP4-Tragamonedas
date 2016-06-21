@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class TragamonedasTest {
 
-	@Test
+	/*@Test
 	public void PrimerTest_VerificacionPERSONAL() {
 				
 		RandomNumberGenerator tambor = new RandomNumberGenerator();
@@ -14,7 +14,7 @@ public class TragamonedasTest {
 		int t2 = tambor.generate();
 		int t3 = tambor.generate(); 
 		
-		System.out.printf("Generador de 3 posiciones:\n \n       %d | %d | %d ",t1,t2,t3);
+		System.out.printf("\n \n Generador de 3 posiciones:\n \n       %d | %d | %d ",t1,t2,t3);
 		
 		if(t1==t2 && t2==t3)
 			{System.out.printf(" \n   $$$$ PREMIO $$$$");}
@@ -22,7 +22,7 @@ public class TragamonedasTest {
 			{System.out.printf(" \n Sigue participando! :) \n ---------------------------------------- ");}
 		
 		
-	}
+	}*/
 
 	
 	@Test
@@ -47,7 +47,14 @@ public class TragamonedasTest {
 	@Test
 	public void TestJugarAlTragamonedas(){
 		
+		Tragamonedas tragamoneda = new Tragamonedas();
 		
+		tragamoneda.activar();
+		
+		if(tragamoneda.entregarPremio()==true)
+			System.out.printf("\n %d | %d | %d \n $$$$ GANASTE!! $$$$$ \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
+		else
+			System.out.printf("\n %d | %d | %d  PERDISTE! :( Sigue participando!! \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
 		
 		
 	}
