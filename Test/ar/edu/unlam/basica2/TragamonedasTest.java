@@ -6,25 +6,24 @@ import org.junit.Test;
 
 public class TragamonedasTest {
 
-	/*@Test
-	public void PrimerTest_VerificacionPERSONAL() {
+	@Test
+	public void TesteoQueSeGenereUnNumeroEntreUnoYDiez(){
+		
+		int esperado=1;
+		int obtenido=1;
+		
+		RandomNumberGenerator objetoRNG = new RandomNumberGenerator();
+		
+		int numero=objetoRNG.generate();
+		
+		if(numero<1 || numero>10)
+		{obtenido=-1;}
+		
+		assertEquals(esperado,obtenido);
 				
-		RandomNumberGenerator tambor = new RandomNumberGenerator();
-		int t1 = tambor.generate(); 
-		int t2 = tambor.generate();
-		int t3 = tambor.generate(); 
-		
-		System.out.printf("\n \n Generador de 3 posiciones:\n \n       %d | %d | %d ",t1,t2,t3);
-		
-		if(t1==t2 && t2==t3)
-			{System.out.printf(" \n   $$$$ PREMIO $$$$");}
-		else
-			{System.out.printf(" \n Sigue participando! :) \n ---------------------------------------- ");}
-		
-		
-	}*/
-
+	}	
 	
+		
 	@Test
 	public void TestearValorInicial(){
 		
@@ -45,13 +44,61 @@ public class TragamonedasTest {
 	
 	
 	@Test
-	public void TestJugarAlTragamonedas(){
+	public void TesteoMetodoEntregarPremio1(){
+		
+		Tragamonedas objetoTM = new Tragamonedas();
+		
+		objetoTM.activar();
+		
+		assertFalse(objetoTM.entregarPremio());
+			
+		
+	}			
+		
+		
+	@Test
+	public void TesteoMetodoEntregarPremioOPCION2(){
+		
+		Tragamonedas objetoTM = new Tragamonedas();
+		
+		objetoTM.activar();
+		
+		Integer t1 = objetoTM.tambor1.getPosicion();
+		Integer t2 = objetoTM.tambor2.getPosicion();
+		Integer t3 = objetoTM.tambor3.getPosicion();
+		
+		if(t1!=t2 && t1!=t3 && t2!=t3)
+		{ 
+			assertFalse(objetoTM.entregarPremio()); }
+		
+		else
+		{
+			assertTrue(objetoTM.entregarPremio());
+		}
+		
+		
+		
+	}
+	
+	/*
+	@Test
+	public void TesteoQueLosTamboresTomenValoresCorrectos(){
 		
 		System.out.printf("\n \n--------- Funcionamiento normal de la máquina: ---------\n");
 		
 		Tragamonedas tragamoneda = new Tragamonedas();
 		
+				
 		tragamoneda.activar();
+		
+		int esperado=1;
+		int obtenido=1;
+		
+		if(>10 || tambor.girar()<1)
+		{obtenido=-1;}
+		
+		assertEquals(esperado,obtenido);
+		
 		
 		if(tragamoneda.entregarPremio()==true)
 			System.out.printf("\n %d | %d | %d  $$$$ GANASTE!! $$$$ \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
@@ -77,7 +124,7 @@ public class TragamonedasTest {
 			System.out.printf("\n %d | %d | %d - PERDISTE! :( Sigue participando!! \n ",tragamoneda.tambor1.getPosicion(),tragamoneda.tambor2.getPosicion(),tragamoneda.tambor3.getPosicion());
 		
 		
-	}
+	}*/
 	
 	
 }

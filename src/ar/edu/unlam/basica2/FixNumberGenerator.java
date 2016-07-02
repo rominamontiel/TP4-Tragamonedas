@@ -4,7 +4,7 @@ public class FixNumberGenerator implements NumberGenerator{
 	
 	private Integer numero;	
 	
-	public FixNumberGenerator(Integer number){
+	public FixNumberGenerator(Integer number){     //CONSTRUCTOR
 		
 		this.numero=number;
 		
